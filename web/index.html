@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'"> -->
+    <script type="text/javascript" src="eel.js" ></script>
+    <link rel="stylesheet" href="index.css">
+    <!-- <link rel="icon" href="monitor.ico" type="image/x-icon"/> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/v4-shims.css">
+    
+    <title>AMonitor Menu</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="index.js"></script>
+
+
+
+<body style="background-color:black;">
+    
+    <div class="menu" style="margin-top:1.5%;">
+
+        <div class="divide" >
+            
+            <img src="icons/monitor10.png"style="margin-left: .5%; margin-top: .2%; float: left; margin-right: 1%" class="logo">   
+
+           
+            <button style="font-size:2vw;" class="discord" onclick="openCreate();" style="float: right;"><b>New Monitor <i class="fas fa-plus"></i></b></button>
+            <button style="font-size:2vw;" class="discord" onclick="browserLoginPython();"><b>Login <i class="fab fa-discord"></i></b></button>
+        
+            <h1 style="font-size:3vw; margin-top: 0;"><b>Monitors</b></h1>
+        
+            <h2 style="font-size:1.5vw;"><b><span id="active">0</span> • Active  <span id="idle">0</span> • Idle  <span id="total">0</span> • Total</b></h2>
+            
+            <table class="table" style="background-color: #616161; z-index: 1; margin-bottom: 1%;">
+                <tr>
+                    <th style="width: 15%;">Name</th>
+                    <th style="width: 20%;">Server</th>
+                    <th style="width: 20%;">Channel</th>
+                    <th style="width: 10%;">Type</th>
+                    <th style="width: 15%;">Status</th>
+                    <th style="width: 11%;">Actions</th>
+                    
+                </tr>
+                </tabble>
+      
+
+        </div>
+
+    <div id="table" class="table">
+        
+        
+        <table class="monitors" id="monitors" style="margin-top: -2vh;">
+            <tr>
+                <th style="width: 15%;"></th>
+                <th style="width: 20%;"></th>
+                <th style="width: 20%;"></th>
+                <th style="width: 10%;"></th>
+                <th style="width: 15%;"></th>
+                <th style="width: 10%;"></th>
+            </tr>
+            
+        </table>
+        
+        
+
+
+    </div>
+    <div class="status">
+        
+    
+        <!-- The actual snackbar -->
+        
+        <div id="snackbar">Browser Login Opened</div>
+
+            <h3 id="setConnection" style="font-size:1.3vw; text-align: right; vertical-align: middle; line-height: 7%; margin-bottom: 0%">Disconnected 🔴</h3>
+            
+            <h2 style="font-size:1.3vw; text-align: left; vertical-align: middle; line-height: 7%; margin-bottom: 0%">Version: <span style="color: white;">0.0.1-BETA</span></h2>
+            
+            <h2 style="font-size:1.3vw; text-align: middle; vertical-align: middle; line-height: 7%; margin-top: 0%; margin-left: 15%;">Days: <span style="color: white;">31</span></h2>
+
+            <button class="nostyle" onclick="openInNewTab('https://www.valoraio.com/renew?key=Z3AT-PQLT-1CMH-LQNK');" style="margin-left: 23%; margin-top: -3.2%; text-align: middle; vertical-align: middle; line-height: 7%"><h3 style="font-size: 1.3vw;">Renew</h3></button>
+
+            <button class="nostyle" onclick="openInNewTab('https://twitter.com/AMonitor_');" style="margin-left: 0%; margin-top: -4.5%; text-align: middle; vertical-align: middle; line-height: 7%"><i class="fab fa-twitter"></i></button>
+           
+    </div>
+    <!-- The overlay -->
+    <div id="myNav" class="overlay">
+
+    
+        <!-- Overlay content -->
+        <div class="overlay-content">
+            
+            <div class="monitorCreate">
+                <div class=form1>
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeCreate()">&times;</a>
+                    <h1 style="text-align: left; margin-left: 2%; margin-top: 3.2%; font-size: 150%">Create Monitors</h1>
+                </div>
+                <div class="form1">
+                    <form id="create">
+                        <input type="text" id="name" name="name" placeholder="Name"><br><br>
+                        <!-- <label type="text" id="ftype" name="ftype" style="margin-top: -4.6vh;" placeholder="Type"><br><br> -->
+                        <select id="type" name="type" >
+                            <option value="" disabled selected><span style="color: grey">Type</span></option>
+                            <option value="site">Site Monitor</option>
+                            <option value="password">Password Monitor</option>
+                            <option value="botCheckout">Bot Checkout Monitor</option>
+                            <option value="retail">Retail Monitor</option>
+                           
+                        </select>
+                </div>
+                    
+                        <select type="full" id="server" name="server" onchange="pullChannels_2()" >
+                            <option value="" disabled selected><span style="color: grey">Server</span></option>
+                    
+                           
+                        
+                        </select>
+                        <select type="full" id="channel" name="channel" >
+                            <option value="" disabled selected><span style="color: grey">Channel</span></option>
+                            
+                            
+                        
+                        </select>
+                    </form>
+                <button type="submit" class="submit" id="create" onclick="createTask();" style="margin: 2%; float: right; font-size: 4vh;"><b>Create</b></i></button>
+                
+                <button id = "pullChannels" class="discord" style="margin: 2%; float: left; font-size: 4vh; width: 32%;" onclick="pullChannels();"><b>Pull Channels</b> <i class="fas fa-link"></i></button>
+                
+            </div>
+        </div>
+    
+    </div>
+    
+    <!-- Use any element to open/show the overlay navigation menu -->
+    <span onclick="openCreate()"></span>
+    <!-- Connected as sheys#4362 🟢  -->
+</body>
+
+
+
+</html>

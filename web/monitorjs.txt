@@ -1,0 +1,45 @@
+document.onload = function() {
+   
+   window.resizeTo(550, 850);
+
+}
+function createItem2(monitorData) {
+   // get table
+   var table = document.getElementById("items");
+   printnow(monitorData);
+   // insert row and column, problem?
+   var row = table.insertRow(0);
+   var cell0 = row.insertCell(0);
+
+   // set cell data 
+   cell0.innerHTML = '<tr> <div class="parent"> <div class="productName"> <h3 id="name" style="position: relative;">Nike Denim Shoe</h3> <h2 style="margin-right: 3%; margin-left: auto;">Stock: <span style="color: white; margin-right: 0; margin-left: auto;">N/A</span></h2> </div> <div class="controls"> <button class="icon" onclick="test2();"><i class="fas fa-play"></i></button> <button class="icon"><i class="fas fa-link"></i></button> <button class="icon"><i class="far fa-clipboard"></i></i></i></button> <button class="icon"><i class="fas fa-dollar-sign"></i></i></i></button> <div class="link"> <h4>https://extrabutterny.com/products/nike-mens-air-max-90-x-denham-infrared-shoes-cu1646-401?variant=37277935141047</h4> </div> <div class="other"> <h2 style="float: left;">Price: <span style="color: white; ">300.00</span></h2> <h2 style="margin-left: 60%; ">Time: <span style="color: white;">11:12:58 PM</span></h2> </div> </div> <div class="imagePlace"> <img src="icons/noimage.jpg" class="image" > </div> </div> </tr>';
+   
+   
+}
+function printnow(data) {
+   jQuery.getScript("index.js",function(){
+      printnow(data);
+      });
+}
+
+
+function setSnackbar2(status){
+   
+   var element = document.getElementById("snackbar2");
+   element.innerHTML = status;
+   showSnackbar2();
+}
+function showSnackbar2() {
+   // Get the snackbar DIV
+   var x2 = document.getElementById("snackbar2");
+   
+   // Add the "show" class to DIV
+   x2.className = "show";
+   
+   // After 3 seconds, remove the show class from DIV
+   setTimeout(function(){ x2.className = x2.className.replace("show", ""); }, 3000);
+   }
+
+function changeName2 (name) {
+   document.querySelector('title').textContent = name
+}

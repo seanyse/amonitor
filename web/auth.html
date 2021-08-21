@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="favela/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favela/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favela/favicon-16x16.png">
+    <link rel="manifest" href="favela/site.webmanifest">
+    <link rel="mask-icon" href="favela/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/v4-shims.css">
+
+    <link rel="stylesheet" href="auth.css">
+    <title>Authenticate</title>
+</head>
+
+<script type="text/javascript" src="eel.js" ></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="auth.js"></script>
+
+
+<body style="background-color: black; overflow: hidden;" >
+   
+    <div class="login">
+
+        <img src="icons/monitor10.png" class="img">
+        <h1 style="font-size:3vw; margin-left: 4%;"><b>Welcome Back</b></h1>
+        <h2 style="font-size:2vw; margin-left: 4%; margin-top: 2%;">Enter your license key to activate AMonitor on your machine</h2>
+
+        <form style="margin-top: 15%; margin-left: 4%;" autocomplete="off">
+            <input type="text" id="key" name="key" placeholder="License Key" autocomplete="off"><br><br>
+        </form>
+
+        <button onclick="authenticate();" type="submit" class="submit" id="submit" style="margin-left: 4%; width: 25%; height: 5%;"><b>LOGIN</b></button>
+        <h1 class="status" id="status"></h1>
+
+    </div>
+    <div class="logo">
+        <img src="icons/auth.jpg">
+    </div>
+    
+</body>
+
+
+</html>

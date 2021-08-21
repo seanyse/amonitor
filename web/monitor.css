@@ -1,0 +1,170 @@
+body {
+    font-family: 'Cardo', serif;
+    
+}
+h1 {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: .2%;
+}
+h2 {
+    color: grey;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    margin-top: .3%;
+    font-size:3vw
+    
+}
+h3 {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    margin-top: 0%;
+    font-size:2.5vw
+}
+h4 {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    margin-top: 0%;
+    font-size:2.5vw
+}
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+.parent {
+    background-color: rgb(39, 36, 36);
+    width: 100%;
+    height:max-content;
+    border-bottom: 1px solid white;
+}
+.productName {
+    
+    float: left;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    
+    width: 70%;
+    overflow: hidden;
+    
+    display: flex;
+    align-items: center;
+    
+
+}
+.image {
+    width: 100%;
+    height: 100%;
+    float: right;
+    margin-top: -64%;
+    
+}
+.imagePlace {
+    width: 30%;
+    height: 10%;
+    margin-right: 0;
+    margin-top: 0%;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+.controls {
+    width: 70%;
+    height: 10%;
+    margin-left: 0;
+    
+    flex: auto;
+    
+    
+}
+.icon {
+    margin-top: -10%;
+    color:white;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: 4px white;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    background: rgb(45, 143, 241);
+    padding:3%;
+    border-radius: 50%;
+}
+.icon:hover {
+    background-color: royalblue;
+}
+.button {
+    background-color: rgb(45, 143, 241);
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 100%;
+    cursor: pointer;
+    margin:1%
+    
+    
+  }
+.button:hover {
+    background-color: royalblue;
+}
+.link {
+  float: right;
+  width: 59%;
+  height: 2%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin-right: 1%;
+  display: flex; 
+  white-space: nowrap;
+  text-align: center;
+}
+.other {
+    width: 100%;
+    margin-top: 1%;
+}
+#snackbar2 {
+    font-family: 'Oswald', sans-serif;
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+  #snackbar2.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}

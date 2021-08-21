@@ -1,0 +1,113 @@
+/* disable img dragging */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+/* disable user highligt */
+:not(input):not(textarea),
+:not(input):not(textarea)::after,
+:not(input):not(textarea)::before {
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+.login{
+    width: 50%;
+   
+    display: inline-block;
+    overflow: auto;
+}
+.logo {
+    width: 50%;
+    float: right;
+    text-align:center;
+   
+
+}
+.img{
+    margin-left: 4%;
+    margin-top: 2%;
+    width: 75px; 
+    height: 75px;
+}
+h1 {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: .2%;
+}
+h2 {
+    color: grey;
+    font-family: 'Oswald', sans-serif;
+    /* text-transform: uppercase; */
+    margin-top: .3%;
+}
+h3 {
+  color: grey;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: .2%;
+}
+
+
+input[type=text], select {
+    background-color:rgb(35, 35, 35);
+    width: 99%;
+    
+    padding: 15px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(41, 41, 41);
+    border-bottom: 4px;
+    box-sizing: border-box;
+    color:white
+  }
+
+.status {
+  
+  float:right; 
+  margin-right: 23%;
+  font-size:1.7vw;
+  
+  
+  color:red;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+  button[type=submit] {
+    
+    background-color: rgb(45, 143, 241);
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 85%;
+    cursor: pointer;
+    
+    border-width: .1%;
+    margin-right: 1%;
+  }
+  
+  button[type=submit]:hover {
+    width: 60%;
+    
+    background-color: RoyalBlue;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 85%;
+    cursor: pointer;
+    
+    border-width: .1%;
+    margin-right: 1%;
+  }
+  
+  
